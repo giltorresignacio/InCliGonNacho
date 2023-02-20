@@ -1,0 +1,85 @@
+* { 
+	font-family: Verdana,Geneva,sans-serif; 
+}
+#a:hover{
+	animation: b 0.5s forwards;
+}
+
+@keyframes b{
+	0% {
+		background-color: #8BC34A;
+		transform: scale(1);
+	}
+	50% {
+		background-color: #8BC34A;
+		transform: scale(0.9);
+	}
+	100% {
+		background-color: #8BC34A;
+		transform: scale(1);
+	}
+}
+body {
+	overflow: auto; /*Graceful degradation para Firefox*/
+	overflow: overlay;
+   }
+   
+   /*Webkit(Chrome, Android browser, Safari, Edge...)*/
+   body::-webkit-scrollbar {
+	display: none;
+   }
+   body:hover::-webkit-scrollbar {
+	display: initial;
+   }
+   body::-webkit-scrollbar-thumb {
+   background-color:transparent;
+   }
+.btn-submit {
+	transition: all 0.3s ease;
+}
+
+.btn-submit.active {
+	animation: button-animation 1s ease;
+}
+#margenes {
+	margin-left: 200px !important;
+	margin-right: 200px !important;
+	background-color: #24c729;
+	overflow: hidden;
+  }
+  
+  .cuadrado {
+	width: 30px;
+	height: 30px;
+	background-color: gray;
+	margin: 10px;
+	display: inline-block;
+	animation-name: mover;
+	animation-duration: 8s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+  }
+  
+  .cuadrado:nth-child(odd) {
+	background-color: #298d2c;
+  }
+  
+  @keyframes mover {
+	0% {
+	  transform: translateX(-100%);
+	}
+	100% {
+	  transform: translateX(100%);
+	}
+  }
+/* Quita los márgenes en pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    #margenes {
+        margin-left: 0px !important;
+	margin-right: 0px !important;
+	background-color: #24c729;
+    }
+}
+.colore{background-color: #8BC34A;}
+
+

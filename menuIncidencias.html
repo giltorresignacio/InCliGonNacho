@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menú de Incidencias</title>
   <link rel="shortcut icon" href="img/adms.ico"> 
+  <link rel="stylesheet" href="estilos.css">
   <!-- Agregamos los enlaces a los archivos de Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -29,6 +30,12 @@
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <div class="cuadrado"></div>
+  <div class="cuadrado"></div>
+  <div class="cuadrado"></div>
+  <div class="cuadrado"></div>
+  <div class="cuadrado"></div>
+  <div class="cuadrado"></div>
 <ul class="navbar-nav ml-auto">
   <li class="nav-item">
     <a class="nav-link" href="index.html">Cerrar sesión</a>
@@ -36,6 +43,13 @@
 </ul>
 </div>  
 </nav>
+<div class="min-vh-50 colore">
+  <div id="margenes" class="bg-white min-vh-100 ml-5 mr-5 p-2 ">
+
+
+
+  
+
 
   <!-- Agregamos el título de la página -->
   <div class="container my-5 text-center">
@@ -46,25 +60,50 @@
   <div class="container d-flex justify-content-center">
     <div class="card m-3" style="width: 18rem;">
       <div class="card-body text-center">
-        <h5 class="card-title">Ver Incidencias</h5>
+        <h5 class="card-title">Listar Incidencias</h5>
         <p class="card-text">Aquí podrás ver las incidencias que has creado.</p>
-        <a href="#" class="btn btn-primary">Ir a Ver Incidencias</a>
+        <a href="verincidencias.html" id="a" class="btn btn-secondary">Ver Incidencias</a>
       </div>
     </div>
 
     <div class="card m-3" style="width: 18rem;">
       <div class="card-body text-center">
-        <h5 class="card-title">Crear Incidencia</h5>
+        <h5 class="card-title">Nuevas Incidencias</h5>
         <p class="card-text">Aquí podrás crear una nueva incidencia.</p>
-        <a href="crearincidencia.html" class="btn btn-primary">Ir a Crear Incidencia</a>
+        <a href="crearincidencia.html"  id="a" class="btn btn-secondary">Crear Incidencia</a>
       </div>
     </div>
-  </div>
+  
 
   
-  <footer>
-  
-  </footer>
+  <div class="card m-3 " id="ocultar"  style="width: 18rem;">
+    <div class="card-body text-center">
+      <h5 class="card-title">Administrar Incidencia</h5>
+      <p class="card-text">Aquí podrás administrar incidencias.</p>
+      <a href="adminincidencia.html" id="a" class="btn btn-secondary">Ir a Crear Administrar incidencias</a>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+<footer class="bg-dark text-light py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div>
+      EducaMadrid - 2023 - Vicepresidencia, Consejería de Educación y Universidades - <a href="https://documentacion.educa.madrid.org/shelves/portal-educativo">Ayuda</a>
+    </div>
+    <div>
+      <a href="https://www.comunidad.madrid/"><img src="img/ce.png"></a>
+      <br>
+      <a href="https://www.educa2.madrid.org/educamadrid/"><img src="img/em.png"></a>
+    </div>
+  </div>
+</footer>
+
   
 </body>
+<script src="oculta.js"></script>
+
 </html>
