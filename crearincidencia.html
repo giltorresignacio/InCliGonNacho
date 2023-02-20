@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>incidencia</title>
+    <link rel="shortcut icon" href="img/adms.ico"> 
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  
+    <!-- Agregamos el logo de Educamadrid -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">
+              <img src="https://www.comunidad.madrid/sites/default/files/styles/imagen_enlace_opcional/public/img/logos-simbolos/educamadrid.png?itok=0T-ABarH&c=e33cd73f1acb6450125224797981191d" height="30" class="d-inline-block align-top" alt="Logo EducaMadrid">
+              Gestor de incidencias EducaMadrid
+          </a>
+      </nav>
+      
+  </header>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">Cerrar sesión</a>
+    </li>
+  </ul>
+  </div>  
+  </nav>
+
+    
+    <div class="container">
+      <h1 class="text-center">Crear incidencia</h1>
+      <form>
+        <div class="form-group">
+          <label for="tipo">Tipo:</label>
+          <select class="form-control" id="tipo">
+            <option>Hardware</option>
+            <option>Software</option>
+            <option>Conectividad</option>
+            <option>Recursos EducaMadrid</option>
+            <option>PDI</option>
+            <option>Impresión</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="aula">Aula o lugar:</label>
+          <select class="form-control" id="aula">
+            
+
+         <option>AULA B.1 (1º COMERCIO INTERNACIONALDUAL) </option>  
+         <option>AULA B.2 (1ºFPB AF) </option>  
+         <option>AULA B.3 (2º DAW-2º DAM) </option>  
+         <option>AULA B.4 (1ºFPB AF- 1º GUIA- 2º GUIA- 1º AFD A-1º AFD B-2º AFD A-2º AFD B) </option>  
+         <option>AULA B.5 (todos los grupos de mañana - 2ºSMR) </option>  
+         <option>AULA B.7 (ACEPELU) </option>  
+         <option>AULA B.9 (ACE MBE) </option>  
+         <option>AULA B.11 (1º AEI) </option>  
+         <option>AULA B.13 (1º APD) </option>  
+         <option>AULA 1.1 (1º AFD A) </option>  
+         <option>AULA 1.2  (1º IS A-1º IS V) </option>  
+         <option>AULA 1.3 (1º AFD B) </option>  
+         <option>AULA 1.4 (1º IS B- 2º IS V) </option>  
+         <option>AULA 1.5 (2º AFD A) </option>  
+         <option>AULA 1.6  (2º IS A) </option>  
+         <option>AULA 1.7  (2º AFD B) </option>  
+         <option>AULA 1.8 (2º COM-2º COM V) </option>  
+         <option>AULA 1.9 (1º FPB) </option>  
+         <option>AULA 1.10  (1º COM-1º COM V) </option>  
+         <option>AULA 1.11 (2º FPB) </option>  
+         <option>ULA 1.12  (1º CI) </option>  
+         <option>AULA 1.13 (todos los grupos de tarde) </option>  
+         <option>AULA 1.14 (2ºCI-COMERCIODISTANCIA) </option>  
+         <option>AULA 1.15 (1º COMERCIO INTERNACIONALDUAL- 1º FPB- 2º FPB -1º COM-2º COM -1º CI -2ºCI -1º COM V-2º COM V -COMERCIODISTANCIA ) </option>  
+         <option>AULA 1.16 (2º  EI A) </option>  
+         <option>AULA 1.17  (1º GUIA) </option>  
+         <option>AULA 1.18 (2º  EI B) </option>  
+         <option>AULA 1.19 (2º GUIA) </option>  
+         <option>AULA 1.20 (1º JARD) </option>  
+         <option>AULA 1.21 (ACE MBE) </option>  
+         <option>AULA 1.22 (2º JARD) </option>  
+         <option>AULA 1.23 (ACE PELU) </option>  
+         <option>AULA 2.1 (1º MC A) </option>  
+         <option>AULA 2.2 (2º IS B-2º APD) </option>  
+         <option>AULA 2.3 (2º MC B) </option>  
+         <option>AULA 2.4 (1º B EI) </option>  
+         <option>AULA 2.5 (2º MC A- 1º MC B) </option>  
+         <option>AULA 2.6 (1º DAW- 1º DAM) </option>  
+         <option>AULA 2.7 (1º ASIRDUAL- 1º SMR) </option>  
+         <option>AULA 2.8 (1º AF- 1º ASDI) </option>  
+         <option>AULA 2.9 (1º AGM) </option>  
+         <option>AULA 2.11  (2º AGM) </option>  
+          <option>AULA 2.13 (2º AF) </option>  
+           
+
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="curso">Curso:</label>
+          <select class="form-control" id="curso">
+            <option>Jardineria</option>
+            <option>1º DAM</option>
+            <option>2º DAM</option>
+            <option>1º DAW</option>
+            <option>2º DAW</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fecha">Fecha:</label>
+          <input type="date" class="form-control" id="fecha">
+        </div>
+        <div class="form-group">
+          <label for="descripcion">Descripción:</label>
+          <textarea class="form-control" rows="5" id="descripcion"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" name="submit-btn">Crear incidencia</button>
+      </form>
+    </div>
+    <!-- Agrega el enlace al archivo de scripts de Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
