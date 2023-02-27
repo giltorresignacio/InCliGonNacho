@@ -206,7 +206,7 @@ INSERT INTO `aulas` (`nombre`) VALUES
 ('AULA 2.11'),
 ('AULA 2.13');
 
-INSERT INTO `incidencias` (`iDtipo`, `iDaula`, `iDgrupo`, `descripcion`, `en proceso`, `profesor_id`) VALUES
+INSERT INTO `incidencias` (`iDtipo`, `iDaula`, `iDgrupo`, `descripcion`, `estado`, `profesor_id`) VALUES
 (1, 3, 2, 'El proyector no funciona', 'creada', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
