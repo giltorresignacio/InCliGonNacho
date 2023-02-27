@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<categorias>
+  <categoria>
+    <nombre>Pescados</nombre>
+    <enlace>pescados.php</enlace>
+  </categoria>
+  <categoria>
+    <nombre>Carnes</nombre>
+    <enlace>carnes.php</enlace>
+  </categoria>
+  <categoria>
+    <nombre>Frutas</nombre>
+    <enlace>frutas.php</enlace>
+  </categoria>
+</categorias>

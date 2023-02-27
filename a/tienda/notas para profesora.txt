@@ -1,0 +1,9 @@
+hola, puedes crear tu propia cuenta, cuando hayas introducido los datos 
+haz click en 'ya tengo cuenta' e ingresa con ellos.
+he creado el archivo xml donde guarda los ususarios con la contraseña.
+la contraseña se encripta, por eso no podras verla, tenlo en cuenta.
+he creado tambien la misma funcionalidad pero para hacerlo funcionar desde bbdd.
+Luego podras elegir la categoria favorita, 
+-me gustaria haber podido hacer que el carrito funcionara desde el minimio de stock pero no he sabido.
+ Un saludo.
+Gonzalo Oliver Alfonso.
