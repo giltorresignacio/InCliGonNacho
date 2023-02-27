@@ -6,7 +6,7 @@
     mysqli_select_db($conexion, "escuela") or die("No se puede seleccionar la BD");
 
     /* Lazo la consulta sobre la BD*/
-    $usuario = mysqli_query($conexion, "select calzado.id, calzado.talla, calzado.precio, marca.nombre ,calzado.color from calzado INNER JOIN marca ON marca=marca.id");
+    $usuario = mysqli_query($conexion, "select mail, contrasena from profesores where mail=");
 
     /* para detectar errores*/
     if (mysqli_connect_errno()) {
