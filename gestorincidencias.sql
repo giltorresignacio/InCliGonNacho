@@ -42,7 +42,7 @@ CREATE TABLE `profesores` (
   `contrasena` varchar(255) DEFAULT NULL,
   `mail` varchar(255) DEFAULT NULL,
   `admin` boolean DEFAULT NULL,
-  PRIMARY KEY (`id`, `usuario`)
+  PRIMARY KEY (`id`, `usuario`,`mail`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -93,7 +93,7 @@ INSERT INTO `profesores` (`nombre`, `apellidos`, `departamento`, `usuario`, `con
 ('Maite', 'Hálamo', 'Daw', 'maite.halamo', '123456', 'maite.halamo@educa.madrid.org', 0),
 ('Laura', 'Algo', 'Daw', 'laura.algo', '123456', 'laura.algo@educa.madrid.org', 0),
 ('Luna', 'Roblejos', 'Daw', 'luna.roblejos', '123456', 'luna.roblejos@educa.madrid.org', 0),
-('Dani', 'Suarez', 'Daw', 'CTIC', 'CTICPIO2023.', 'pepe.garcia@educa.madrid.org', 1);
+('Dani', 'Suarez', 'Daw', 'CTIC', 'CTICPIO2023.', 'admin.garcia@educa.madrid.org', 1);
 
 INSERT INTO `tipos` (`nombre`) VALUES
 ('Hardware'),
