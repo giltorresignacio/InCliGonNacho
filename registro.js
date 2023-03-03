@@ -8,6 +8,11 @@ var depart;
 var datos;
 var rgex = /^\w+([.]?\w+)*@educa.madrid.org$/
 var regNombreApe = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{2,255}$/
+var regContra = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{6,15}$/
+var upperCase = new RegExp('[A-Z]');
+var lowerCase = new RegExp('[a-z]');
+var numbers = new RegExp('[0-9]');
+
 function enviarValidarPeticionAJAX(event) {
     if (user.value != '' && rgex.test(user.value) && password.value != '') {
         console.log("validacionesok")
@@ -49,7 +54,7 @@ function validarApellido() {
         $('#chiquitoApellido').css('display', 'none');
     } else {
         $('#chiquitoApellido').css('display', 'block');
-       
+
     }
 }
 
@@ -58,30 +63,74 @@ function validarDepartamento() {
         $('#chiquitoDepartamento').css('display', 'none');
     } else {
         $('#chiquitoDepartamento').css('display', 'block');
-       
+
     }
 }
+
+function validarUsuario() {
+    if (usuReg.val() != '' && regNombreApe.test(usuReg.val())) {
+        $('#chiquitoUsuario').css('display', 'none');
+    } else {
+        $('#chiquitoUsuario').css('display', 'block');
+    }
+}
+
+function validarEmail() {
+    if (emailReg.val() != '' && rgex.test(emailReg.val())) {
+        $('#chiquitoCorreo').css('display', 'none');
+    } else {
+        $('#chiquitoCorreo').css('display', 'block');
+    }
+}
+
+function validarPassword() {
+
+    if (passReg.val() != '' && regContra.test(passReg.val())) {
+        $('#tamanho').css('color', 'green');
+    } else {
+        $('#tamanho').css('color', 'red');
+        //MAYUS
+        if (passReg.val().match(upperCase)) {
+            $('#mayus').css('color', 'green');
+        } else {
+            $('#mayus').css('color', 'red');
+        }
+        //MINUS
+        if (passReg.val().match(lowerCase)) {
+            $('#minus').css('color', 'green');
+        } else {
+            $('#minus').css('color', 'red');
+        }
+        //NUM
+        if (passReg.val().match(numbers)) {
+            $('#number').css('color', 'green');
+        } else {
+            $('#number').css('color', 'red');
+        }
+    }
+}
+
 document.addEventListener('readystatechange', inicializar, false);
 function inicializar() {
     if (document.readyState == 'complete') {
         nomReg = $('#nombreRegistro');
         apell = $('#apellidosRegistro');
-        depart =$('#departamentoRegistro');
-        usuReg = document.getElementById('usuarioRegistro');
-        emailReg = document.getElementById('emailRegistro');
-        passReg = document.getElementById('passwordRegistro');
-        formulario = document.getElementById('form');
+        depart = $('#departamentoRegistro');
+        usuReg = $('#usuarioRegistro');
+        emailReg = $('#emailRegistro');
+        passReg = $('#passwordRegistro');
+        formulario = $('#form');
         var divsToHide = document.getElementsByClassName("ocultar"); //divsToHide is an array
         for (var i = 0; i < divsToHide.length; i++) {
-            divsToHide[i].style.display = "none"; // depending on what you're doing
+            divsToHide[i].style.display = "none";
+            divsToHide[i].style.color = "red"; // depending on what you're doing
         }
-        formulario.addEventListener('submit', enviarValidarPeticionAJAX, false);
+        formulario.submit(enviarValidarPeticionAJAX);
         nomReg.keyup(validarNombre);
-        apell.keyup('submit', validarApellido, false);
+        apell.keyup(validarApellido);
         depart.change(validarDepartamento);
-        // usuReg.addEventListener('submit', validarUsuario, false)
-        // emailReg.addEventListener('submit', validarEmail, false);
-        // passReg.addEventListener('submit', validarPassword, false);
-
+        usuReg.keyup(validarUsuario)
+        emailReg.focusout(validarEmail);
+        passReg.keyup(validarPassword);
     }
 }

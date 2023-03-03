@@ -82,19 +82,22 @@
 						<label for="usuarioRegistro">Nombre de usuario:</label>
 						<input type="text" class="form-control" id="usuarioRegistro" name="usuarioRegistro"
 							placeholder="Introduce tu nombre de usuario">
-						<p id="chiquitoDepartamento" class="ocultar"><small>Nombre de usuario incorrecto</small></p>
+						<p id="chiquitoUsuario" class="ocultar"><small>Nombre de usuario incorrecto</small></p>
 					</div>
 					<div class="form-group">
 						<label for="emailRegistro">Correo electrónico:</label>
 						<input type="email" class="form-control" id="emailRegistro" name="emailRegistro"
 							placeholder="Introduce tu correo electrónico">
-						<p id="chiquitoCorreo" class="ocultar"><small>Correo con formato incorrectos</small></p>
+						<p id="chiquitoCorreo" class="ocultar"><small>El correo debe ser @educa.madrid.org</small></p>
 					</div>
 					<div class="form-group">
-						<label for="passwordRegistro">Contraseña:</label>
+						<label for="passwordRegistro">Contraseña(mínimo 6 carácteres):</label>
 						<input type="password" class="form-control" id="passwordRegistro" name="passwordRegistro"
 							placeholder="Introduce tu contraseña">
-						<p id="chiquitoCorreo" class="ocultar"><small>Contraseña incorrecta</small></p>
+						<p id="mayus"><small>Debe contener mínimo 1 mayúscula</small></p>
+						<p id="minus"><small>Debe contener mínimo 1 minúscula</small></p>
+						<p id="number"><small>Debe contener mínimo 1 número</small></p>
+						<p id="tamanho"><small>Contraseña válida</small></p>
 					</div>
 					<button type="submit" id="a" class="btn btn-secondary">Registrarse</button>
 				</form>
