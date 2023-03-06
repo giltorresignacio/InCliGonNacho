@@ -27,7 +27,7 @@ function gestionarRespuesta(evento) {
             sessionStorage.setItem("email", datos.mail);
             sessionStorage.setItem("contrasena", datos.contrasena);
             sessionStorage.setItem("admin", datos.admin);
-            salidas = datos.getElementsByTagName("salida");
+            sessionStorage.setItem("id", datos.id);
         }
     }
 }

@@ -7,6 +7,7 @@ function comprobarSesion() {
     console.log(sessionStorage.getItem("email"));
     console.log(sessionStorage.getItem("contrasena"));
     console.log(sessionStorage.getItem("admin"));
+    console.log(sessionStorage.getItem("id"));
   }
 }
 document.onreadystatechange = function () {

@@ -20,7 +20,6 @@ var comEmail = 0;
 var comPass = 0;
 
 function enviarValidarPeticionAJAX(event) {
-    console.log("uwu");
     console.log(comApe);
     console.log(comNom);
     console.log(comDepar);
@@ -43,6 +42,7 @@ function enviarValidarPeticionAJAX(event) {
 }
 function gestionarRespuesta(evento) {
     if (evento.target.readyState == 4 && evento.target.status == 200) {
+        console.log(xhr.response)
         if (xhr.response == false) {
             window.alert("Usuario ya existente")
             formulario.preventDefault();

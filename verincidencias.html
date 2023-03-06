@@ -39,14 +39,28 @@
             <div class="cuadrado"></div>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Cerrar sesión</a>
+                    <a class="nav-link" id="cerrarSesion" href="index.html">Cerrar sesión</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <div class="min-vh-50 colore">
-        <div id="margenes" class="bg-white min-vh-100 ml-5 mr-5 p-2 ">
+        <div id="margenes" class="bg-white min-vh-100 ml-5 mr-5 p-2">
+            <div id="mostrar">
+                <table id="tabla">
+                    <thead>
+                        <tr>
+                          <th>Tipo</th>
+                          <th>Aula</th>
+                          <th>Grupo</th>
+                          <th>Fecha</th>
+                          <th>Descripción</th>
+                          <th>Estado</th>
+                        </tr>
+                      </thead>
+                </table>
+            </div>
         </div>
     </div>
     <footer class="bg-dark text-light py-3">
@@ -64,6 +78,8 @@
     </footer>
 
 </body>
+<script src="incidencias.js"></script>
 <script src="redicrec.js"></script>
+
 
 </html>
