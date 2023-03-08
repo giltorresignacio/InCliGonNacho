@@ -30,8 +30,8 @@ function enviarValidarPeticionAJAX(event) {
         console.log("validacionesok")
         xhr = new XMLHttpRequest();
         xhr.addEventListener('readystatechange', gestionarRespuesta, false);
-        console.log("buscarEnBase.php?nomReg=" + nomReg.val() + "&apell=" + apell.val() + "&usuReg=" + usuReg.val() + "&emailReg=" + emailReg.val() + "&passReg=" + passReg.val() + "&depart=" + depart.val());
-        xhr.open("GET", "buscarEnBase.php?nomReg=" + nomReg.val() + "&apell="
+        console.log("./PHP/buscarEnBase.php?nomReg=" + nomReg.val() + "&apell=" + apell.val() + "&usuReg=" + usuReg.val() + "&emailReg=" + emailReg.val() + "&passReg=" + passReg.val() + "&depart=" + depart.val());
+        xhr.open("GET", "./PHP/buscarEnBase.php?nomReg=" + nomReg.val() + "&apell="
             + apell.val() + "&usuReg=" + usuReg.val() + "&emailReg=" + emailReg.val()
             + "&passReg=" + passReg.val() + "&depart=" + depart.val(), false);
         xhr.send();

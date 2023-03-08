@@ -3,14 +3,16 @@ var password;
 var formulario;
 var user;
 var datos;
+var eventoForm 
 var rgex = /^\w+([.]?\w+)*@educa.madrid.org$/
 function enviarValidarPeticionAJAX(event) {
-    if (user.value != '' && rgex.test(user.value) && password.value != '') {
+    if (user.value != '' && password.value != '') {
         console.log("validacionesok")
+        eventoForm = event;
         xhr = new XMLHttpRequest();
         xhr.addEventListener('readystatechange', gestionarRespuesta, false);
-        console.log( "buscarEnBase.php?emailInicioSesion=" + user.value + "&contrasenhaInicioSesion=" + password.value);
-        xhr.open("GET", "buscarEnBase.php?emailInicioSesion=" + user.value + "&contrasenhaInicioSesion=" + password.value, false);
+        console.log( "./PHP/buscarEnBase.php?emailInicioSesion=" + user.value + "&contrasenhaInicioSesion=" + password.value);
+        xhr.open("GET", "./PHP/buscarEnBase.php?emailInicioSesion=" + user.value + "&contrasenhaInicioSesion=" + password.value, false);
         xhr.send();
     } else {
         document.getElementById('chiquito').style.display = "block";
@@ -21,7 +23,7 @@ function gestionarRespuesta(evento) {
     if (evento.target.readyState == 4 && evento.target.status == 200) {
         if (xhr.response == false) {
             document.getElementById('chiquito').style.display = "block";
-            formulario.preventDefault();
+            eventoForm.preventDefault();
         } else {
             datos = JSON.parse(xhr.response);
             sessionStorage.setItem("email", datos.mail);

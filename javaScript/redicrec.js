@@ -16,9 +16,10 @@ document.onreadystatechange = function () {
     // Llamamos a la función comprobarSesion
     comprobarSesion();
     if (sessionStorage.getItem("admin") == 1) {
-      document.getElementById("ocultar").style.display = "block";
+      $('#ocultar').show();
+      
     } else {
-      document.getElementById("ocultar").style.display = "none";
+      $('#ocultar').hide();
     }
   }
 };

@@ -5,7 +5,7 @@ xhr = new XMLHttpRequest();
 function enviarValidarPeticionAJAX() {
     tabla = document.getElementById('tabla');
     xhr.addEventListener('readystatechange', gestionarRespuesta, false);
-    xhr.open("GET", "buscarEnBase.php?idBuscarIncidencias=" + sessionStorage.getItem("id"), false);
+    xhr.open("GET", "./PHP/buscarEnBase.php?idBuscarIncidencias=" + sessionStorage.getItem("id"), false);
     xhr.send();
 }
 function gestionarRespuesta() {
