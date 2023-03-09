@@ -16,7 +16,7 @@ function cambiarEstado(event) {
 }
 function gestionarRespuesta() {
     if (xhr.readyState == 4 && xhr.status == 200) {
-        tabla.innerHTML = "";
+        tabla.innerHTML = '<thead><tr><th>Tipo</th><th>Aula</th><th>Grupo</th><th>Fecha</th><th>Descripción</th><th>Estado</th></tr></thead>';
         datos = JSON.parse(xhr.response);
         console.log(datos);
         for (index = 0; index < (datos.Tipo).length; index++) {

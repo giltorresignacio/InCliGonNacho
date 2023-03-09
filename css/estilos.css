@@ -5,6 +5,29 @@
 #a:hover {
 	animation: b 0.5s forwards;
 }
+@media (max-width: 768px) {
+	.card {
+	  width: 100%;
+	}
+	
+	.container.d-flex.justify-content-center {
+	  flex-direction: column;
+	  align-items: center;
+	}
+  }
+  
+@media (max-width: 557px) {
+	header {
+	  display: none !important;
+	}
+
+	.madriz {
+	  display: none !important;
+	}
+	
+  }
+
+
 
 @keyframes b {
 	0% {
@@ -87,7 +110,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Quita los márgenes en pantallas más pequeñas */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1147px) {
 	#margenes {
 		margin-left: 0px !important;
 		margin-right: 0px !important;
@@ -102,3 +125,85 @@ body::-webkit-scrollbar-thumb {
 #chiquito{
 	color: red;
 }
+/* Estilos por defecto */
+table {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+th,
+td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #24c729;
+    border-collapse: collapse;
+    padding: 0.3em;
+}
+
+caption {
+    padding: 0.3em;
+}
+
+/* Media Query para pantallas con un ancho máximo de 576px */
+@media screen and (max-width: 768px) {
+    th,
+    td {
+        width: auto;
+        display: block;
+        border: none;
+        text-align: center;
+    }
+
+    th {
+        font-weight: bold;
+        border-bottom: 2px solid #24c729;
+        text-align: right; /* Alineamos el texto a la derecha */
+    }
+
+    td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 0.5em;
+    }
+
+    td {
+        border-bottom: 1px solid #24c729;
+        padding: 0.5em;
+    }
+}
+
+/* Media Query para pantallas con un ancho máximo de 768px */
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th,
+    td {
+        width: auto;
+        display: block;
+        border: none;
+        text-align: center;
+    }
+
+    th {
+        font-weight: bold;
+        border-bottom: 2px solid #24c729;
+        text-align: right; /* Alineamos el texto a la derecha */
+    }
+
+    td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 0.5em;
+    }
+
+    td {
+        border-bottom: 1px solid #24c729;
+        padding: 0.5em;
+	}
+}
+

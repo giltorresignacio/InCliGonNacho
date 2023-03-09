@@ -18,7 +18,7 @@ var comDepar = 0;
 var comUsu = 0;
 var comEmail = 0;
 var comPass = 0;
-
+var eventillo;
 function enviarValidarPeticionAJAX(event) {
     console.log(comApe);
     console.log(comNom);
@@ -26,6 +26,7 @@ function enviarValidarPeticionAJAX(event) {
     console.log(comUsu);
     console.log(comEmail);
     console.log(comPass);
+    eventillo = event; 
     if (comNom == 1 && comApe == 1 && comDepar == 1 & comUsu == 1 && comEmail == 1 && comPass == 1) {
         console.log("validacionesok")
         xhr = new XMLHttpRequest();
@@ -36,7 +37,7 @@ function enviarValidarPeticionAJAX(event) {
             + "&passReg=" + passReg.val() + "&depart=" + depart.val(), false);
         xhr.send();
     } else {
-        window.alert("Error");
+        window.alert("error");
         event.preventDefault();
     }
 }
@@ -45,7 +46,6 @@ function gestionarRespuesta(evento) {
         console.log(xhr.response)
         if (xhr.response == false) {
             window.alert("Usuario ya existente")
-            formulario.preventDefault();
         } else {
             window.alert("Usuario creado correctamente")
         }
