@@ -22,7 +22,7 @@ function filtrar() {
 function gestionarRespuesta() {
     if (xhr.readyState == 4 && xhr.status == 200) {
         datos = JSON.parse(xhr.response);
-        tabla.innerHTML = '';
+        tabla.innerHTML = '<thead><tr><th>Tipo</th><th>Aula</th><th>Grupo</th><th>Fecha</th><th>Descripción</th><th>Estado</th></tr></thead>';
         for (index = 0; index < (datos.Tipo).length; index++) {
             console.log(datos.estado[index]);
             if (datos.estado[index] == 'creada') {
