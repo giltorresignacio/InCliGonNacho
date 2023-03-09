@@ -9,6 +9,7 @@ if (isset($_GET['emailInicioSesion'])) {
     $contraInicioSesion = $_GET['contrasenhaInicioSesion'];
     $usuario = mysqli_query($conexion, "select id, mail, contrasena, admin from profesores where usuario='$mailInicioSesion' AND contrasena='$contraInicioSesion'");
 
+    
     /* para detectar errores*/
     if (mysqli_connect_errno()) {
         printf("<p>Conexión fallida: %s</p>", mysqli_connect_error());
@@ -18,7 +19,7 @@ if (isset($_GET['emailInicioSesion'])) {
     /* Devuelve el número de filas del resultado */
     $numr = mysqli_num_rows($usuario);
     if ($numr > 0) {
-        echo "hola";
+       
         for ($i = 0; $i < $numr; $i++) {
             /* El resultado es realmente una matriz y voy cogiendo por filas con esa función*/
             $fila = mysqli_fetch_array($usuario, MYSQLI_ASSOC);
@@ -122,6 +123,47 @@ if (isset($_GET['emailInicioSesion'])) {
             exit();
         }
         $incidencias = mysqli_query($conexion, "UPDATE `incidencias` SET `estado`='$valorIncidencia' WHERE `id`=$idIncidencia");
+        /* Devuelve el número de filas del resultado */
+    } catch (Exception $e) {
+        echo $e;
+        echo false;
+    }
+} else if (isset($_GET['filtracion'])) {
+    $filtrar = $_GET['filtracion'];
+    $id = $_GET['idBuscarIncidenciasFiltrar'];
+    try {
+        if (mysqli_connect_errno()) {
+            printf("<p>Conexión fallida: %s</p>", mysqli_connect_error());
+            exit();
+        }
+        if($filtrar == 'asc'){
+            $incidencias = mysqli_query($conexion, "select tipos.nombre as Tipo, aulas.nombre as Aula, grupos.nombre as Grupo, incidencias.fecha, incidencias.descripcion, incidencias.estado , incidencias.id from incidencias 
+            INNER JOIN tipos ON incidencias.iDtipo = tipos.id 
+            INNER JOIN aulas ON incidencias.iDaula = aulas.id
+            INNER JOIN grupos ON incidencias.iDgrupo = grupos.id where profesor_id=$id ORDER BY estado");
+            /* Devuelve el número de filas del resultado */
+            
+        } else {
+            $incidencias = mysqli_query($conexion, "select tipos.nombre as Tipo, aulas.nombre as Aula, grupos.nombre as Grupo, incidencias.fecha, incidencias.descripcion, incidencias.estado , incidencias.id from incidencias 
+            INNER JOIN tipos ON incidencias.iDtipo = tipos.id 
+            INNER JOIN aulas ON incidencias.iDaula = aulas.id
+            INNER JOIN grupos ON incidencias.iDgrupo = grupos.id where profesor_id=$id ORDER BY estado DESC");
+        }
+        $numr = mysqli_num_rows($incidencias);
+            if ($numr > 0) {
+                for ($i = 0; $i < $numr; $i++) {
+                    /* El resultado es realmente una matriz y voy cogiendo por filas con esa función*/
+                    $fila = mysqli_fetch_array($incidencias, MYSQLI_ASSOC);
+                    /* Uso un foreach para recorrer fila ya que es una array .*/
+                    foreach ($fila as $key => $value) {
+                        $arrayParaJson[$key][] = $value;
+                    }
+                }
+                echo json_encode($arrayParaJson);
+            } else {
+                return false;
+            }
+       
         /* Devuelve el número de filas del resultado */
     } catch (Exception $e) {
         echo $e;

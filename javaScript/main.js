@@ -3,15 +3,14 @@ var password;
 var formulario;
 var user;
 var datos;
-var eventoForm 
+var eventoForm
 var rgex = /^\w+([.]?\w+)*@educa.madrid.org$/
 function enviarValidarPeticionAJAX(event) {
     if (user.value != '' && password.value != '') {
-        console.log("validacionesok")
         eventoForm = event;
         xhr = new XMLHttpRequest();
         xhr.addEventListener('readystatechange', gestionarRespuesta, false);
-        console.log( "./PHP/buscarEnBase.php?emailInicioSesion=" + user.value + "&contrasenhaInicioSesion=" + password.value);
+        console.log("./PHP/buscarEnBase.php?emailInicioSesion=" + user.value + "&contrasenhaInicioSesion=" + password.value);
         xhr.open("GET", "./PHP/buscarEnBase.php?emailInicioSesion=" + user.value + "&contrasenhaInicioSesion=" + password.value, false);
         xhr.send();
     } else {
@@ -37,6 +36,7 @@ function gestionarRespuesta(evento) {
 document.addEventListener('readystatechange', inicializar, false);
 function inicializar() {
     if (document.readyState == 'complete') {
+        console.log("hola");
         user = document.getElementById('user');
         password = document.getElementById('password');
         formulario = document.getElementById('myForm');
